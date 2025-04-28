@@ -5,6 +5,18 @@
         <script src="script_forms.js" defer></script>
     </head>
     <body>
-        
+        <header>FORMS</header>
+        <h1>Identité</h1>
+        <form>
+            <label for="prenom">Prénom :</label>
+            <input placeholder="Votre prénom" type="text" id="prenom" name="prenom"><br>
+            <label for="nom">Nom :</label>
+            <input placeholder="Votre nom" type="text" id="nom" name="nom">
+        </form>
+        <div id="nameDisplay">Vous vous appelez <i>votre nom</i>.</div>
+        <input type="date" id="date" name="birthday">
+        <p>Vous êtes né en <span id="birthdayYear"></span>.</p>
+        <p>Vous avez <span id="age">__</span> ans.</p>
+        <h1>Personnalité</h1>
     </body>
 </html>
