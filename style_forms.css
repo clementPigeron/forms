@@ -1,4 +1,37 @@
-header {
+body {
+    margin: 0;
+    padding: 0;
+}
+.columns {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    overflow-y: hidden;
+}
+.column-reversed {
+    transform: translateY(calc(-100% + 100vh));
+    animation: reverse-scroll linear forwards;
+    animation-timeline: scroll(root block);
+}
+
+#left-col {
+    grid-column: 1;
+    background-image: url('./pictures/grass.png');
+    background-size: 70%;
+    background-repeat: repeat-y;
+}
+
+#center-col {
+    grid-column: 2;
+}
+#right-col {
+    grid-column: 3;
+    background-image: url('./pictures/grass2.png');
+    background-size: 70%;
+    background-repeat: repeat-y;
+    background-position: right;
+}
+
+.title {
     font-size: 60px;
     text-align: center;
 }
@@ -16,21 +49,36 @@ header {
 .cyan {
     background-color: cyan;
 }
+
 .yellow {
     background-color: #ffff00;
 }
+
 .magenta {
     background-color: magenta;
 }
+
 .green {
     background-color: #80ED80;
 }
+
 .coral {
     background-color: #ff7756;
 }
+
 .purple {
     background-color: #8077d5;
 }
+
 .brown {
     background-color: #aa9e8e;
+}
+
+@keyframes reverse-scroll {
+    from {
+        transform: translateY(calc(-100% + 100vh));
+    }
+    to {
+        transform: translateY(calc(100% - 100vh));
+    }
 }

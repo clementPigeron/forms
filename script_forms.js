@@ -31,7 +31,7 @@ colorInputs.forEach((input) => {
 })
 
 function updateNameDisplay() {
-    nameDisplay.textContent = fname.value+" "+lname.value
+    nameDisplay.textContent = fname.value + " " + lname.value
 }
 
 function updateDateDisplay() {
@@ -45,24 +45,24 @@ function updateAgeDisplay() {
     tdmonth = today.getMonth()
     bdmonth = datedate.getMonth()
 
-    if (tdmonth<bdmonth || (tdmonth===bdmonth && today.getDate()<datedate.getDate())) {
+    if (tdmonth < bdmonth || (tdmonth === bdmonth && today.getDate() < datedate.getDate())) {
         age--
     }
 
     console.log(age)
-    ageDisplay.textContent=age
+    ageDisplay.textContent = age
 }
 
 function updateColorMixer() {
     console.log(colorValue);
     mixerDisplay.className = ''
     switch (colorValue) {
-        case 1: mixerDisplay.classList.add("cyan"); console.log("oui");  break;
-        case 3: mixerDisplay.classList.add("magenta");  break;
-        case 6: mixerDisplay.classList.add("yellow");  break;
-        case 4: mixerDisplay.classList.add("purple");  break;
-        case 9: mixerDisplay.classList.add("coral");  break;
-        case 7: mixerDisplay.classList.add("green");  break;
-        case 10: mixerDisplay.classList.add("brown");  break;
+        case 1: mixerDisplay.classList.add("cyan"); break;
+        case 3: mixerDisplay.classList.add("magenta"); break;
+        case 6: mixerDisplay.classList.add("yellow"); break;
+        case 4: mixerDisplay.classList.add("purple"); break;
+        case 9: mixerDisplay.classList.add("coral"); break;
+        case 7: mixerDisplay.classList.add("green"); break;
+        case 10: mixerDisplay.classList.add("brown"); break;
     }
 }
