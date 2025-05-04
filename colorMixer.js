@@ -9,36 +9,23 @@ colorInputs.forEach((input) => {
         let green_list = []
         colorInputs.forEach((button) => {
             if (button.checked) {
-                if (baseColor === undefined) {
-                    baseColor = button.value;
-                } else {
-                    const baseColor_r = baseColor.substring(0,2);
-                    const baseColor_g = baseColor.substring(2,4);
-                    const baseColor_b = baseColor.substring(4,6);
-
-                    const r = button.value.substring(0,2);
-                    const g = button.value.substring(2,4);
-                    const b = button.value.substring(4,6);
-                    red_list.push(r)
-                    green_list.push(g)
-                    //
-
-                    
-
-
-                    debugger
-                }
+                const r = parseInt(button.value.substring(0,2), 16);
+                const g = parseInt(button.value.substring(2,4), 16);
+                const b = parseInt(button.value.substring(4,6), 16);
+                red_list.push(r)
+                blue_list.push(b)
+                green_list.push(g)
             }
         })
-        //parseInt(baseColor_r, 16), parseInt(r, 16)
+        
         const result_r = average(red_list);
-        //const result_g = average([parseInt(baseColor_g, 16), parseInt(g, 16)]);
-        //const result_b = average([parseInt(baseColor_b, 16), parseInt(b, 16)]);
+        const result_g = average(green_list);
+        const result_b = average(blue_list);
         
         baseColor = "rgb(" + 
                         result_r + ',' +
                         result_g + ',' +
-                        result_b + ',' + 
+                        result_b + 
                     ")";
 
         mixerDisplay.style.backgroundColor = baseColor
@@ -47,12 +34,4 @@ colorInputs.forEach((input) => {
 
 function average(vals) {
     return vals.reduce((acc, next) => acc + next) / vals.length;
-
-    /*
-    let acc = 0
-    for (let i = 0 ; i< vals.length; ++i) {
-        acc += vals[i];
-    } 
-    return acc / vals.length
-    */
 }
