@@ -7,6 +7,8 @@ colorInputs.forEach((input) => {
         let red_list = []
         let blue_list = []
         let green_list = []
+        let checking = false
+
         colorInputs.forEach((button) => {
             if (button.checked) {
                 const r = parseInt(button.value.substring(0,2), 16);
@@ -15,19 +17,24 @@ colorInputs.forEach((input) => {
                 red_list.push(r)
                 blue_list.push(b)
                 green_list.push(g)
+                checking = true
             }
         })
         
-        const result_r = average(red_list);
-        const result_g = average(green_list);
-        const result_b = average(blue_list);
+        if (checking) {
+            const result_r = average(red_list);
+            const result_g = average(green_list);
+            const result_b = average(blue_list);
+            
+            baseColor = "rgb(" + 
+                            result_r + ',' +
+                            result_g + ',' +
+                            result_b + 
+                        ")";
+        } else {
+            baseColor = "transparent"
+        }
         
-        baseColor = "rgb(" + 
-                        result_r + ',' +
-                        result_g + ',' +
-                        result_b + 
-                    ")";
-
         mixerDisplay.style.backgroundColor = baseColor
     })
 })
