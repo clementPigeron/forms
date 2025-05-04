@@ -14,24 +14,6 @@ date.addEventListener("input", () => {
     updateAgeDisplay();
 })
 
-// const colorInputs = document.querySelectorAll("#colorMixer input")
-// const mixerDisplay = document.getElementById("mixerDisplay")
-// let colorValue = 0
-
-// colorInputs.forEach((input) => {
-//     input.addEventListener("change", () => {
-//         // if (input.checked) {
-//         //     colorValue += parseInt(input.value)
-//         // } else {
-//         //     colorValue -= parseInt(input.value)
-//         // }
-
-//         colorValue += input.checked ? parseInt(input.value) : -parseInt(input.value)
-
-//         updateColorMixer()
-//     })
-// })
-
 function updateNameDisplay() {
     nameDisplay.textContent = fname.value + " " + lname.value
 }
@@ -54,25 +36,3 @@ function updateAgeDisplay() {
     console.log(age)
     ageDisplay.textContent = age
 }
-
-// function updateColorMixer() {
-//     console.log(colorValue);
-//     mixerDisplay.className = ''
-
-//     // const red = redtick ? "ff" : "00"
-//     // const green = "00"
-//     // const blue = "ff"
-//     // mixerDisplay.style.backgroundColor = `#${red}${green}${blue}`
-
-
-
-//     switch (colorValue) {
-//         case 1: mixerDisplay.classList.add("cyan"); break;
-//         case 3: mixerDisplay.classList.add("magenta"); break;
-//         case 6: mixerDisplay.classList.add("yellow"); break;
-//         case 4: mixerDisplay.classList.add("purple"); break;
-//         case 9: mixerDisplay.classList.add("coral"); break;
-//         case 7: mixerDisplay.classList.add("green"); break;
-//         case 10: mixerDisplay.classList.add("brown"); break;
-//     }
-// }

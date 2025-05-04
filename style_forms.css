@@ -46,34 +46,6 @@ body {
     width: 200px;
 }
 
-.cyan {
-    background-color: cyan;
-}
-
-.yellow {
-    background-color: #ffff00;
-}
-
-.magenta {
-    background-color: magenta;
-}
-
-.green {
-    background-color: #80ED80;
-}
-
-.coral {
-    background-color: #ff7756;
-}
-
-.purple {
-    background-color: #8077d5;
-}
-
-.brown {
-    background-color: #aa9e8e;
-}
-
 @keyframes reverse-scroll {
     from {
         transform: translateY(calc(-100% + 100vh));
