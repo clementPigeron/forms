@@ -1,3 +1,10 @@
+if (navigator.userAgent.includes("Firefox")) {
+    const sideColumns = document.querySelectorAll(".column-reversed")
+    sideColumns.forEach((col) => {
+        col.classList.add("column-reversed-firefox")
+    })
+}
+
 const fname = document.getElementById('prenom')
 const lname = document.getElementById('nom')
 const nameDisplay = document.querySelector("#nameDisplay i")
