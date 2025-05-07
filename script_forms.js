@@ -8,14 +8,29 @@ if (navigator.userAgent.includes("Firefox")) {
 const fname = document.getElementById('prenom')
 const lname = document.getElementById('nom')
 const nameDisplay = document.querySelector("#nameDisplay i")
+
 const date = document.getElementById("date")
 const birthdayDateDisplay = document.getElementById("birthdayYear")
 const ageDisplay = document.getElementById("age")
 
 let today = new Date()
 
-fname.addEventListener("input", updateNameDisplay)
-lname.addEventListener("input", updateNameDisplay)
+const email = document.getElementById("email")
+const validEmail = document.getElementById("validEmail")
+const invalidEmail = document.getElementById("invalidEmail")
+
+email.addEventListener("input", () => {
+    checkEmail(email.value);
+})
+
+fname.addEventListener("input", () => {
+    updateNameDisplay()
+    drawName()
+})
+lname.addEventListener("input", () => {
+    updateNameDisplay()
+    drawName()
+})
 date.addEventListener("input", () => {
     updateDateDisplay();
     updateAgeDisplay();
@@ -42,4 +57,15 @@ function updateAgeDisplay() {
 
     console.log(age)
     ageDisplay.textContent = age
+}
+
+function checkEmail(input) {
+    const validRegexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/ ;
+    if (input.match(validRegexEmail)) {
+        validEmail.style.display = "inline"
+        invalidEmail.style.display = "none"
+    } else {
+        invalidEmail.style.display = "inline"
+        validEmail.style.display = "none"
+    }
 }

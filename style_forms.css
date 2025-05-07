@@ -40,6 +40,27 @@ body {
     text-align: center;
 }
 
+#identite {
+    border: 2px solid green;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+#nameCanvas {
+    width: 500px;
+    height: 180px;
+    border: 2px solid black;
+}
+
+#invalidEmail {
+    color:red;
+    display: none;
+}
+#validEmail {
+    color:green;
+    display: none;
+}
+
 #colorMixer {
     width: 380px;
 }
